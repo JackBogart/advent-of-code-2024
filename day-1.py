@@ -8,13 +8,13 @@ load_dotenv()
 
 cookies = {"session": os.getenv('SESSION_COOKIE')}
 
-r = requests.get('https://adventofcode.com/2024/day/1/input', cookies=cookies)
+response = requests.get('https://adventofcode.com/2024/day/1/input', cookies=cookies)
 
 # Part One
 list_1 = []
 list_2 = []
 
-for line in r.iter_lines():
+for line in response.iter_lines():
   l, r = line.decode('utf-8').split()
   list_1.append(int(l))
   list_2.append(int(r))
